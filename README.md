@@ -6,7 +6,9 @@
 # Maven下test打包
 You can produce a jar which will include your test classes and resources.
 
-<project>
+  <project>
+  
+  
   ...
   <build>
     <plugins>
