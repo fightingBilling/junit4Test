@@ -6,43 +6,41 @@
 # Maven下test打包
 You can produce a jar which will include your test classes and resources.
 
-  <project>
-  
-  
-  ...
-  <build>
-    <plugins>
+    <project>
+       ...
+      <build>
+        <plugins>
+          ...
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>2.5</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>test-jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          ...
+        </plugins>
+      </build>
       ...
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>test-jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      ...
-    </plugins>
-  </build>
-  ...
-</project>
+    </project>
 
 To reuse this artifact in an other project, you must declare this dependency with type test-jar :
 
-<project>
-  ...
-  <dependencies>
-    <dependency>
-      <groupId>groupId</groupId>
-      <artifactId>artifactId</artifactId>
-      <type>test-jar</type>
-      <version>version</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  ...
-</project>
+    <project>
+      ...
+      <dependencies>
+        <dependency>
+          <groupId>groupId</groupId>
+          <artifactId>artifactId</artifactId>
+          <type>test-jar</type>
+          <version>version</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+      ...
+    </project>
